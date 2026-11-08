@@ -18,13 +18,7 @@ def get_battery_icon(battery_level):
     filled_blocks = int(battery_level // 10)
     empty_blocks = 10 - filled_blocks
     
-    bar = ""
-    for i in range(filled_blocks):
-        bar += "█"
-    for i in range(empty_blocks):
-        bar += "."
-        
-    return f"[{bar}] {battery_level}%"
+   arif
 
 # Function for AI Mode analysis
 def ai_energy_assistant(battery_left, stress_level, total_consumption):
@@ -91,15 +85,7 @@ def run_human_battery_os():
             else:
                 sleep_deficite = 0
 
-            sleep_cost = sleep_deficite * 4
-            focus_cost = working_hour * 5
-            stress_cost = stress_level * 2
-            activity_cost = phys_actv_hour * 6
-            total_consumption = sleep_cost + focus_cost + stress_cost + activity_cost
-
-            rest_recovery_boost = (resting_time / 60) * 12
-            total_recovery = rest_recovery_boost + food_recovery
-            battery_left = initial_battery - total_consumption + total_recovery
+           galym
 
             ai_suggestion = ai_energy_assistant(battery_left, stress_level, total_consumption)
             battery_display = get_battery_icon(battery_left)
@@ -114,19 +100,7 @@ def run_human_battery_os():
             # Store into List
             activity_logs.append([current_day, battery_left, "AI Mode Used"])
 
-        elif ai_choice == "NO":
-            sleep_hour = eval(input("Sleep Hour: "))
-            working_hour = eval(input("Working Hour: "))
-            resting_time = eval(input("Resting Time (in minutes): "))
-            stress_level = int(input("Stress Level scale (from 1 to 10): "))
-            phys_actv_hour = eval(input("Physical Activity Hour: "))
-
-            print("How would you rate your food intake today?")
-            for option in food_options:
-                print(f"{option[0]} = {option[1]}")
-                
-            food_rating = int(input("Enter your food rating (1/2/3): "))
-            food_recovery = calculate_food_recovery(food_rating)
+        hannah
 
             if sleep_hour <= 8:
                 sleep_deficite = 8 - sleep_hour
@@ -164,11 +138,7 @@ def run_human_battery_os():
                 ("Activity Cost", activity_cost)
             ]
             
-            for category, cost in cost_breakdown:
-                if total_consumption > 0:
-                    percentage = (cost / total_consumption) * 100
-                else:
-                    percentage = 0.0
+          syukrina
                     
                 print(f"-> Category: {category}")
                 for sub_step in range(1):  # Nested loop requirement
@@ -184,12 +154,7 @@ def run_human_battery_os():
         else:
             print("Invalid choice! Skipping this attempt.")
 
-        print("\n" + "=" * 30)
-        next_day = input("Do you want to log for the next day? (YES/NO): ").strip().upper()
-        if next_day == "YES":
-            day_count += 1
-        else:
-            running = False
+        caryl
 
     # Display full summary across all days stored in List
     print("\n[System Log Summary - All Days]")
