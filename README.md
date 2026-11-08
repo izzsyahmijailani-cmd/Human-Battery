@@ -1,5 +1,6 @@
-for category, cost in cost_breakdown:
-                if total_consumption > 0:
-                    percentage = (cost / total_consumption) * 100
-                else:
-                    percentage = 0.0
+ print("\n" + "=" * 30)
+        next_day = input("Do you want to log for the next day? (YES/NO): ").strip().upper()
+        if next_day == "YES":
+            day_count += 1
+        else:
+            running = False
