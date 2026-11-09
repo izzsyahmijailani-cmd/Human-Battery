@@ -18,8 +18,13 @@ def get_battery_icon(battery_level):
     filled_blocks = int(battery_level // 10)
     empty_blocks = 10 - filled_blocks
     
-   arif
-
+bar = ""
+    for i in range(filled_blocks):
+        bar += "█"
+    for i in range(empty_blocks):
+        bar += "."
+        
+    return f"[{bar}] {battery_level}%"
 # Function for AI Mode analysis
 def ai_energy_assistant(battery_left, stress_level, total_consumption):
     print("\n[AI Assistant Active - Analyzing Your Energy Profile...]")
