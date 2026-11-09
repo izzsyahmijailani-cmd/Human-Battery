@@ -135,15 +135,20 @@ def run_human_battery_os():
                 ("Sleep Cost", sleep_cost),
                 ("Work Cost", focus_cost),
                 ("Stress Cost", stress_cost),
-                ("Activity Cost", activity_cost)
-            ]
-            
-          syukrina
+                ("Activity Cost", activity_cost)]
+        
+            for category, cost in cost_breakdown:
+                if total_consumption > 0:
+                    percentage = (cost / total_consumption) * 100
+                else:
+                    percentage = 0.0
                     
                 print(f"-> Category: {category}")
-                for sub_step in range(1):  # Nested loop requirement
-                    print(f"   Impact Value: {cost} units ({percentage:.1f}% dari jumlah guna)")
+                for sub_step in range(1):
+                    print(f"   Impact Value: {cost} units ({percentage:.1f}% of total consumption)")
+           
 
+        
             print("-" * 25)
             print(f"Total Energy Consumed: {total_consumption}")
             print(f"Total Recovery Gained: {total_recovery}")
@@ -154,7 +159,12 @@ def run_human_battery_os():
         else:
             print("Invalid choice! Skipping this attempt.")
 
-        caryl
+        print("\n" + "=" * 30)
+                next_day = input("Do you want to log for the next day? (YES/NO): ").strip().upper()
+                if next_day == "YES":
+                    day_count += 1
+                else:
+                    running = False
 
     # Display full summary across all days stored in List
     print("\n[System Log Summary - All Days]")
