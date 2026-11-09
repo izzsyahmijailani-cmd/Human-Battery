@@ -44,9 +44,9 @@ def ai_energy_assistant(battery_left, stress_level, total_consumption):
     return advice
 
 def run_human_battery_os():
-    print("=" * 20)
-    print("ADVANCE HUMAN BATTERY OS")
-    print("=" * 20)
+    print("=" * 47)
+    print("ADVANCE HUMAN BATTERY OS".center(47))
+    print("=" * 47)
 
     initial_battery = 100
     
