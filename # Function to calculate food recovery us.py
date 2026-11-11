@@ -114,7 +114,7 @@ def run_human_battery_os():
             # Store into List
             activity_logs.append([current_day, battery_left, "AI Mode Used"])
 
-        hannah
+    
 elif ai_choice == "NO":
             sleep_hour = eval(input("Sleep Hour: "))
             working_hour = eval(input("Working Hour: "))
