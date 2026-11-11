@@ -108,11 +108,11 @@ def run_human_battery_os():
         hannah
 
             if sleep_hour <= 8:
-                sleep_deficite = 8 - sleep_hour
+                sleep_deficit = 8 - sleep_hour
             else:
-                sleep_deficite = 0
+                sleep_deficit = 0
 
-            sleep_cost = sleep_deficite * 4
+            sleep_cost = sleep_deficit * 4
             focus_cost = working_hour * 5
             stress_cost = stress_level * 2
             activity_cost = phys_actv_hour * 6
