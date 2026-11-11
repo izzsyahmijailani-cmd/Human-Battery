@@ -90,7 +90,16 @@ def run_human_battery_os():
             else:
                 sleep_deficite = 0
 
-           galym
+            sleep_cost = sleep_deficite * 4
+            focus_cost = working_hour * 5
+            stress_cost = stress_level * 2
+            activity_cost = phys_actv_hour * 6
+            total_consumption = sleep_cost + focus_cost + stress_cost + activity_cost
+
+            rest_recovery_boost = (resting_time / 60) * 12
+            total_recovery = rest_recovery_boost + food_recovery
+            battery_left = initial_battery - total_consumption + total_recovery
+
 
             ai_suggestion = ai_energy_assistant(battery_left, stress_level, total_consumption)
             battery_display = get_battery_icon(battery_left)
