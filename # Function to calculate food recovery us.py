@@ -115,6 +115,19 @@ def run_human_battery_os():
             activity_logs.append([current_day, battery_left, "AI Mode Used"])
 
         hannah
+elif ai_choice == "NO":
+            sleep_hour = eval(input("Sleep Hour: "))
+            working_hour = eval(input("Working Hour: "))
+            resting_time = eval(input("Resting Time (in minutes): "))
+            stress_level = int(input("Stress Level scale (from 1 to 10): "))
+            phys_actv_hour = eval(input("Physical Activity Hour: "))
+
+            print("How would you rate your food intake today?")
+            for option in food_options:
+                print(f"{option[0]} = {option[1]}")
+                
+            food_rating = int(input("Enter your food rating (1/2/3): "))
+            food_recovery = calculate_food_recovery(food_rating)
 
             if sleep_hour <= 8:
                 sleep_deficit = 8 - sleep_hour
