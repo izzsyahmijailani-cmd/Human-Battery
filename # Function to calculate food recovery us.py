@@ -19,10 +19,10 @@ def get_battery_icon(battery_level):
     empty_blocks = 10 - filled_blocks
     
 bar = ""
-    for i in range(filled_blocks):
-        bar += "█"
-    for i in range(empty_blocks):
-        bar += "."
+for i in range(filled_blocks):
+     bar += "█"
+ for i in range(empty_blocks):
+    bar += "."
         
     return f"[{bar}] {battery_level}%"
 # Function for AI Mode analysis
