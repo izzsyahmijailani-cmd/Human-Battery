@@ -147,9 +147,9 @@ elif ai_choice == "NO":
           
             if battery_left < 50:
                 if stress_level > 7:
-                    status_message = "CRITICAL: Low battery & High stress! Rest immediately."
+                    status_message = "CRITICAL: Low battery & High stress!"
                 else:
-                    status_message = "WARNING: Low battery level. Take a break."
+                    status_message = "WARNING: Low battery level."
             else:
                 status_message = "OPTIMAL: Energy level looks great!"
 
