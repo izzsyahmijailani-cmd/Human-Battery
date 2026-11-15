@@ -18,11 +18,11 @@ def get_battery_icon(battery_level):
     filled_blocks = int(battery_level // 10)
     empty_blocks = 10 - filled_blocks
     
-bar = ""
-for i in range(filled_blocks):
-     bar += "█"
- for i in range(empty_blocks):
-    bar += "."
+    bar = ""
+    for i in range(filled_blocks):
+        bar += "█"
+    for i in range(empty_blocks):
+        bar += "."  
         
     return f"[{bar}] {battery_level}%"
 # Function for AI Mode analysis
@@ -115,7 +115,7 @@ def run_human_battery_os():
             activity_logs.append([current_day, battery_left, "AI Mode Used"])
 
     
-elif ai_choice == "NO":
+        elif ai_choice == "NO":
             sleep_hour = eval(input("Sleep Hour: "))
             working_hour = eval(input("Working Hour: "))
             resting_time = eval(input("Resting Time (in minutes): "))
@@ -125,7 +125,7 @@ elif ai_choice == "NO":
             print("How would you rate your food intake today?")
             for option in food_options:
                 print(f"{option[0]} = {option[1]}")
-                
+                        
             food_rating = int(input("Enter your food rating (1/2/3): "))
             food_recovery = calculate_food_recovery(food_rating)
 
@@ -144,10 +144,10 @@ elif ai_choice == "NO":
             total_recovery = rest_recovery_boost + food_recovery
             battery_left = initial_battery - total_consumption + total_recovery
 
-          
+                
             if battery_left < 50:
                 if stress_level > 7:
-                    status_message = "CRITICAL: Low battery & High stress!"
+                    status_message = "CRITICAL: Low battery & High stress!."
                 else:
                     status_message = "WARNING: Low battery level."
             else:
@@ -157,25 +157,25 @@ elif ai_choice == "NO":
             activity_logs.append([current_day, battery_left, status_message])
 
             # Nested Loop Analysis & Percentage calculation
-            print("\n[Nested Loop Analysis - Cost Breakdown]")
+            print("\n[Cost Breakdown]")
             cost_breakdown = [
                 ("Sleep Cost", sleep_cost),
                 ("Work Cost", focus_cost),
                 ("Stress Cost", stress_cost),
                 ("Activity Cost", activity_cost)]
-        
+                
             for category, cost in cost_breakdown:
                 if total_consumption > 0:
                     percentage = (cost / total_consumption) * 100
                 else:
                     percentage = 0.0
-                    
+                            
                 print(f"-> Category: {category}")
                 for sub_step in range(1):
                     print(f"   Impact Value: {cost} units ({percentage:.1f}% of total consumption)")
-           
+                
 
-        
+                
             print("-" * 25)
             print(f"Total Energy Consumed: {total_consumption}")
             print(f"Total Recovery Gained: {total_recovery}")
@@ -187,11 +187,11 @@ elif ai_choice == "NO":
             print("Invalid choice! Skipping this attempt.")
 
         print("\n" + "=" * 30)
-                next_day = input("Do you want to log for the next day? (YES/NO): ").strip().upper()
-                if next_day == "YES":
-                    day_count += 1
-                else:
-                    running = False
+        next_day = input("Do you want to log for the next day? (YES/NO): ").strip().upper()
+        if next_day == "YES":
+            day_count += 1
+        else:
+            running = False
 
     # Display full summary across all days stored in List
     print("\n[System Log Summary - All Days]")
